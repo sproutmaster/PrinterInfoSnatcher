@@ -25,7 +25,7 @@ let response_message = {
     }
 };
 
-let printer_message = {};
+let printer_message = {}; // hello world
 
 class Printer {
     constructor(host) {
