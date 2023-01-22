@@ -5,11 +5,13 @@ const pupp = require("puppeteer");
 const {isIPV4Address} = require("ip-address-validator");
 const {response} = require("express");
 require("dotenv").config();
+var cors = require('cors');
 
 const app = express();
+
 app.use(helmet());
 app.use(morgan('tiny'));
-
+app.use(cors());
 
 let response_message = {
     status: "system Operational",
