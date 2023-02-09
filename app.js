@@ -3,9 +3,8 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const pupp = require("puppeteer");
 const {isIPV4Address} = require("ip-address-validator");
-const {response} = require("express");
 require("dotenv").config();
-var cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
@@ -206,7 +205,7 @@ app.get('/', async (req, res) =>
 
 });
 
-let port = process.env.PORT | 8002;
+let port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`listening on port http://localhost:${port}`);
 });
