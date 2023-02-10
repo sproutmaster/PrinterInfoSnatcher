@@ -13,7 +13,7 @@ node app.js
 #### Run
 ```
 From docker hub: docker run -p port:8000 -d sproutmaster/printer-info-snatcher
-Local Build: docker run -p port:8000 -d username/printer-info-snatcher
+Local build: docker run -p 8000:8000 -d username/printer-info-snatcher
 ```
 
 #### Build Image

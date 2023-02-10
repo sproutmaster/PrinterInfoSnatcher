@@ -47,7 +47,7 @@ class Printer {
             headless: true,
             devtools: false,
             ignoreHTTPSErrors: true,
-            args: ['--incognito']
+            args: ['--incognito', '--disable-gpu', '--disable-dev-shm-usage', '--disable-setuid-sandbox', '--no-sandbox']
         });
 
         let browser_params = {
