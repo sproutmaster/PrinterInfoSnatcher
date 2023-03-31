@@ -16,11 +16,11 @@ let response_message = {
     status: "system Operational",
     info: {
         api_name: "Printer Info Snatcher",
-        version: "1.00",
+        version: process.env.VER,
         description: "Returns printer info from IP address",
         supported_printers: "HP Enterprise M-series",
         request_type: "GET",
-        request_format: "https://ms.bobst-ecs.info/printer_info_snacher?ip=w.x.y.z",
+        request_format: "http://app_ip_address?ip=w.x.y.z",
         response_type: "JSON",
         authorization: "Not Required",
     }
