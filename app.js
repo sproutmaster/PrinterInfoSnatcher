@@ -5,6 +5,7 @@ const pupp = require("puppeteer");
 const {isIPV4Address} = require("ip-address-validator");
 require("dotenv").config();
 const cors = require('cors');
+const {response} = require("express");
 
 const app = express();
 
@@ -13,19 +14,17 @@ app.use(morgan('tiny'));
 app.use(cors());
 
 let response_message = {
-    status: "system Operational",
     info: {
         api_name: "Printer Info Snatcher",
         version: process.env.VER,
         description: "Returns printer info from IP address",
         supported_printers: "HP Enterprise M-series",
-        request_type: "GET",
-        request_format: "http://app_ip_address?ip=w.x.y.z",
-        response_type: "JSON",
-        authorization: "Not Required",
+        request_format: "http://app-ip-address?ip=w.x.y.z",
+        response_type: "json",
     }
 };
 
+let request_message = {}
 let printer_message = {}; // hello world
 
 class Printer {
@@ -173,6 +172,8 @@ class Printer {
             status: "success",
             message: this
         }
+
+        request_message.ip = this.host;
     }
 }
 
@@ -188,8 +189,8 @@ app.get('/', async (req, res) =>
         {
             let printer = new Printer(ip.trim());
             await printer.get_info();
-
             response_message.response = printer_message;
+            response_message.request = request_message;
 
             res.status(200).json(response_message);
 
