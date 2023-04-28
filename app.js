@@ -174,6 +174,7 @@ class Printer {
         }
 
         request_message.ip = this.host;
+        await browser.close();
     }
 }
 
