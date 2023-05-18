@@ -32,5 +32,4 @@ jobs:
           use_latest: true
           docker_username:  ${{ secrets.DOCKERHUB_USER }}
           docker_password: ${{ secrets.DOCKERHUB_PSW }}
-          build_args: N/A
           working-directory: ./
