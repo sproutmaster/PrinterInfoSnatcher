@@ -24,7 +24,7 @@ jobs:
       - name: Docker build & publish
         uses: bitovi/github-actions-docker-publish@v1.0.7
         with:
-          checkout: true
+          checkout: false
           image_tag: ${{ env.VER }}
           use_sha: false
           org_name: ${{ secrets.DOCKERHUB_ORG }}
