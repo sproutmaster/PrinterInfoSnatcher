@@ -1,3 +1,4 @@
+[![Docker Hub Continuous Integration](https://github.com/sproutmaster/printer-info-snatcher/actions/workflows/docker-hub-integration.yml/badge.svg?branch=master)](https://github.com/sproutmaster/printer-info-snatcher/actions/workflows/docker-hub-integration.yml) 
 # Printer Info Snatcher
 Scrapes and returns printer info as JSON to be used as a microservice or an api
 
@@ -12,7 +13,7 @@ node app.js
 
 #### Run
 ```
-From docker hub: docker run -p port:8000 -d sproutmaster/printer-info-snatcher
+From docker hub: docker run -p port:8000 -d zelossystems/printer-info-snatcher:2.0
 Local build: docker run -p 8000:8000 -d username/printer-info-snatcher
 ```
 
