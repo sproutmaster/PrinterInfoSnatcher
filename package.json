@@ -1,6 +1,6 @@
 {
-  "name": "printer_info_api",
-  "version": "1.0.0",
+  "name": "printer_info_snatcher",
+  "version": "2.0.0",
   "description": "Scrapes printer info from web UI",
   "main": "app.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "ip-address-validator": "^1.0.9",
     "is-reachable": "^5.2.1",
     "morgan": "^1.10.0",
+    "process": "^0.11.10",
     "puppeteer": "^19.5.2"
   }
 }
