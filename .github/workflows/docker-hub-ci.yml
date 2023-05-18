@@ -1,0 +1,28 @@
+name: Docker Hub CI
+on:
+  push:
+    branches: 
+      - master
+      - staging/*
+  pull_request:
+    branches: 
+      - master
+      - staging/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Build Tag Publish
+        uses: bitovi/github-actions-docker-publish@v1.0.7
+        with:
+          checkout: true
+          image_tag: ${{ env.VER }}
+          use_sha: false
+          org_name: ${{ secrets.DOCKERHUB_ORG }}
+          repo_name: printer-info-snatcher
+          use_latest: true
+          docker_username: ${{ secrets.DOCKERHUB_USER }}
+          docker_password: ${{ secrets.DOCKERHUB_PSW }}
+          build_args:
+          working-directory: ./
