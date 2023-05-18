@@ -18,7 +18,7 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./
-          mode: empty
+          mode:
           load-mode: strict
 
       - name: Docker build & publish
