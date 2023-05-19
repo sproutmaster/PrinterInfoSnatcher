@@ -1,4 +1,4 @@
-name: Docker Hub Continuous Integration
+name: Docker Hub CI
 on:
   push:
     branches: 
@@ -10,7 +10,7 @@ on:
       
 jobs:
   docker-image-push:
-    name: build & push Image
+    name: build & push image
     runs-on: ubuntu-latest
 
     steps:
